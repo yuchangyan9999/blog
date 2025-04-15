@@ -5,29 +5,36 @@ title: 首页
 
 <section class="hero">
   <div class="hero-content">
-    <h1>欢迎来到我的博客</h1>
-    <p class="hero-subtitle">分享思考、知识与经验</p>
+    <div class="hero-badge">个人博客</div>
+    <h1>欢迎来到我的<span class="highlight">博客世界</span></h1>
+    <p class="hero-subtitle">分享思考、知识与经验，记录生活的点滴</p>
     <div class="hero-buttons">
-      <a href="/about/" class="btn btn-primary">了解更多</a>
-      <a href="/archive/" class="btn btn-secondary">浏览文章</a>
+      <a href="/about/" class="btn btn-primary"><i class="ri-user-line"></i> 了解更多</a>
+      <a href="/archive/" class="btn btn-secondary"><i class="ri-archive-line"></i> 浏览文章</a>
+    </div>
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
     </div>
   </div>
 </section>
 
 <section class="featured-posts">
-  <h2 class="section-title">最新文章</h2>
+  <h2 class="section-title">最新文章 <i class="ri-article-line"></i></h2>
+  <p class="section-subtitle">发现我的最新思考和创作</p>
   
   <div class="posts-grid">
     {% for post in collections.post | reverse %}
       <article class="post-card">
         <div class="post-card-content">
           <div class="post-meta">
-            <time datetime="{{ post.date | dateToISO }}">{{ post.date | readableDate }}</time>
+            <time datetime="{{ post.date | dateToISO }}"><i class="ri-calendar-line"></i> {{ post.date | readableDate }}</time>
             {% if post.data.tags %}
               <span class="post-tags">
                 {% for tag in post.data.tags %}
                   {% if tag != "post" %}
-                  <a href="/tags/{{ tag }}/" class="tag">#{{ tag }}</a>
+                  <a href="/tags/{{ tag }}/" class="tag"><i class="ri-price-tag-3-line"></i> {{ tag }}</a>
                   {% endif %}
                 {% endfor %}
               </span>
@@ -44,7 +51,9 @@ title: 首页
             </div>
           {% endif %}
           
-          <a href="{{ post.url }}" class="read-more">阅读全文 &rarr;</a>
+          <div class="post-card-footer">
+            <a href="{{ post.url }}" class="read-more">阅读全文 <i class="ri-arrow-right-line"></i></a>
+          </div>
         </div>
       </article>
     {% endfor %}
@@ -53,11 +62,18 @@ title: 首页
 
 <section class="cta-section">
   <div class="cta-content">
+    <div class="cta-icon"><i class="ri-chat-3-line"></i></div>
     <h2>想了解更多？</h2>
-    <p>欢迎查看我的所有文章或关注我的社交媒体</p>
+    <p>欢迎查看我的所有文章或关注我的社交媒体，与我共同探讨更多精彩内容</p>
     <div class="cta-buttons">
-      <a href="/archive/" class="btn btn-primary">文章归档</a>
-      <a href="/about/" class="btn btn-secondary">关于我</a>
+      <a href="/archive/" class="btn btn-primary"><i class="ri-archive-line"></i> 文章归档</a>
+      <a href="/about/" class="btn btn-secondary"><i class="ri-user-line"></i> 关于我</a>
+    </div>
+    <div class="cta-social">
+      <a href="#" class="social-link"><i class="ri-weibo-line"></i></a>
+      <a href="#" class="social-link"><i class="ri-wechat-line"></i></a>
+      <a href="#" class="social-link"><i class="ri-github-line"></i></a>
+      <a href="#" class="social-link"><i class="ri-zhihu-line"></i></a>
     </div>
   </div>
 </section>

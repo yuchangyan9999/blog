@@ -6,18 +6,25 @@
   <title>文章归档 - 个人博客</title>
   <link rel="stylesheet" href="/css/style.css">
   <meta name="description" content="我的个人博客网站">
+  <!-- 添加图标字体 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <!-- 添加网站图标 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+  <!-- 添加预连接以提高性能 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body>
+<body class="animate-in">
   <header>
     <div class="container">
-      <h1 class="site-title"><a href="/">个人博客</a></h1>
+      <h1 class="site-title"><a href="/"><i class="ri-quill-pen-line"></i> 个人博客</a></h1>
       <nav>
         <ul>
-          <li><a href="/">首页</a></li>
-          <li><a href="/archive/">文章归档</a></li>
-          <li><a href="/tags/">标签</a></li>
-          <li><a href="/search/">搜索</a></li>
-          <li><a href="/about/">关于我</a></li>
+          <li><a href="/"><i class="ri-home-4-line"></i> 首页</a></li>
+          <li><a href="/archive/"><i class="ri-archive-line"></i> 文章归档</a></li>
+          <li><a href="/tags/"><i class="ri-price-tag-3-line"></i> 标签</a></li>
+          <li><a href="/search/"><i class="ri-search-line"></i> 搜索</a></li>
+          <li><a href="/about/"><i class="ri-user-line"></i> 关于我</a></li>
         </ul>
       </nav>
       <div class="theme-switch-wrapper">
@@ -25,7 +32,7 @@
           <input type="checkbox" id="checkbox" />
           <div class="slider round"></div>
         </label>
-        <span class="theme-mode-text">夜间模式</span>
+        <span class="theme-mode-text"><i class="ri-moon-line"></i> 夜间模式</span>
       </div>
     </div>
   </header>
@@ -76,36 +83,70 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3 class="footer-heading">关于博客</h3>
+          <h3 class="footer-heading"><i class="ri-information-line"></i> 关于博客</h3>
           <p>这是一个分享思考、知识与经验的个人博客。欢迎浏览文章并与我交流。</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="ri-weibo-line"></i></a>
+            <a href="#" class="social-icon"><i class="ri-wechat-line"></i></a>
+            <a href="#" class="social-icon"><i class="ri-github-line"></i></a>
+            <a href="#" class="social-icon"><i class="ri-zhihu-line"></i></a>
+          </div>
         </div>
         
         <div class="footer-section">
-          <h3 class="footer-heading">导航</h3>
+          <h3 class="footer-heading"><i class="ri-compass-3-line"></i> 导航</h3>
           <ul class="footer-links">
-            <li><a href="/">首页</a></li>
-            <li><a href="/about/">关于我</a></li>
-            <li><a href="/archive/">文章归档</a></li>
+            <li><a href="/"><i class="ri-arrow-right-s-line"></i> 首页</a></li>
+            <li><a href="/about/"><i class="ri-arrow-right-s-line"></i> 关于我</a></li>
+            <li><a href="/archive/"><i class="ri-arrow-right-s-line"></i> 文章归档</a></li>
+            <li><a href="/tags/"><i class="ri-arrow-right-s-line"></i> 标签</a></li>
+            <li><a href="/search/"><i class="ri-arrow-right-s-line"></i> 搜索</a></li>
           </ul>
         </div>
         
         <div class="footer-section">
-          <h3 class="footer-heading">联系方式</h3>
+          <h3 class="footer-heading"><i class="ri-contacts-line"></i> 联系方式</h3>
           <ul class="footer-links">
-            <li><a href="mailto:your.email@example.com">发送邮件</a></li>
-            <li><a href="#">微博</a></li>
-            <li><a href="#">知乎</a></li>
-            <li><a href="#">GitHub</a></li>
+            <li><a href="mailto:your.email@example.com"><i class="ri-mail-line"></i> 发送邮件</a></li>
+            <li><a href="#"><i class="ri-weibo-line"></i> 微博</a></li>
+            <li><a href="#"><i class="ri-zhihu-line"></i> 知乎</a></li>
+            <li><a href="#"><i class="ri-github-line"></i> GitHub</a></li>
           </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 个人博客. 保留所有权利.</p>
-        <p class="footer-credit">由 <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a> 强力驱动</p>
+        <p><i class="ri-copyright-line"></i> 2025 个人博客. 保留所有权利.</p>
+        <p class="footer-credit">由 <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer"><i class="ri-rocket-line"></i> Eleventy</a> 强力驱动</p>
       </div>
     </div>
   </footer>
   <script src="/js/theme-switcher.js"></script>
+  <!-- 添加页面动画效果的脚本 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 添加页面进入动画
+      document.body.classList.add('loaded');
+      
+      // 添加滚动动画
+      const animateElements = document.querySelectorAll('.post-card, .section-title, .hero, .cta-section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      animateElements.forEach(el => {
+        el.classList.add('animate-hidden');
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
