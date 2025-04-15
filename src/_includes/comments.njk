@@ -1,0 +1,45 @@
+<div class="comments-container">
+  <h2 class="comments-title">评论</h2>
+  <p class="comments-description">使用 GitHub 账号参与讨论</p>
+  
+  <div class="giscus"></div>
+  
+  <script src="https://giscus.app/client.js"
+          data-repo="[你的GitHub用户名]/[你的仓库名]"
+          data-repo-id="[你的仓库ID]"
+          data-category="Announcements"
+          data-category-id="[分类ID]"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="zh-CN"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+
+<style>
+  .comments-container {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--medium-gray);
+  }
+  
+  .comments-title {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+  }
+  
+  .comments-description {
+    margin-bottom: 30px;
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+  }
+  
+  .giscus {
+    width: 100%;
+  }
+</style>

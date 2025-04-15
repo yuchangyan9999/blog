@@ -1,0 +1,83 @@
+---
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+layout: base.njk
+eleventyComputed:
+  title: "标签: {{ tag }}"
+---
+
+<div class="tag-page">
+  <header class="tag-header">
+    <h1>标签: #{{ tag }}</h1>
+    <p>包含标签 "{{ tag }}" 的所有文章</p>
+  </header>
+
+  <div class="tag-posts">
+    {% set postslist = collections[tag] %}
+    {% if postslist.length > 0 %}
+      <div class="posts-grid">
+        {% for post in postslist | reverse %}
+          <article class="post-card">
+            <div class="post-card-content">
+              <div class="post-meta">
+                <time datetime="{{ post.date | dateToISO }}">{{ post.date | readableDate }}</time>
+              </div>
+              
+              <h3 class="post-title">
+                <a href="{{ post.url }}">{{ post.data.title }}</a>
+              </h3>
+              
+              {% if post.data.description %}
+                <div class="post-excerpt">
+                  <p>{{ post.data.description }}</p>
+                </div>
+              {% endif %}
+              
+              <a href="{{ post.url }}" class="read-more">阅读全文 &rarr;</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>没有找到包含此标签的文章。</p>
+    {% endif %}
+  </div>
+
+  <div class="tag-navigation">
+    <a href="/tags/" class="btn btn-primary">查看所有标签</a>
+    <a href="/" class="btn btn-secondary">返回首页</a>
+  </div>
+</div>
+
+<style>
+  .tag-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .tag-header h1 {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+  }
+  
+  .tag-header p {
+    color: var(--dark-gray);
+  }
+  
+  .tag-navigation {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .tag-navigation .btn {
+    margin: 0 10px;
+  }
+  
+  .tag-navigation .btn-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+  }
+</style>
