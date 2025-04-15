@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索 - 个人博客</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="description" content="我的个人博客网站">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="site-title"><a href="/">个人博客</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">首页</a></li>
+          <li><a href="/archive/">文章归档</a></li>
+          <li><a href="/tags/">标签</a></li>
+          <li><a href="/search/">搜索</a></li>
+          <li><a href="/about/">关于我</a></li>
+        </ul>
+      </nav>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+        <span class="theme-mode-text">夜间模式</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+<div class="search-page">
+  <header class="search-header">
+    <h1>搜索文章</h1>
+    <p>在博客中查找您感兴趣的内容</p>
+  </header>
+
+  <div class="search-container">
+    <form id="search-form" class="search-form">
+      <div class="search-input-container">
+        <input type="text" id="search-input" class="search-input" placeholder="输入关键词搜索..." autocomplete="off">
+        <button type="submit" class="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="search-results" class="search-results">
+        <ul id="search-results-list" class="search-results-list"></ul>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/search.js"></script>
+
+<style>
+  .search-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .search-header h1 {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+  }
+  
+  .search-header p {
+    color: var(--dark-gray);
+  }
+  
+  .search-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .search-form {
+    position: relative;
+  }
+  
+  .search-input-container {
+    display: flex;
+    border: 2px solid var(--medium-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-input-container:focus-within {
+    border-color: var(--primary-color);
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+  }
+  
+  .search-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .search-results {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    z-index: 10;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  
+  .search-results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .search-result-item {
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  .search-result-item:last-child {
+    border-bottom: none;
+  }
+  
+  .search-result-link {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-result-link:hover {
+    background-color: var(--light-gray);
+    text-decoration: none;
+  }
+  
+  .search-result-title {
+    margin: 0 0 5px;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+  }
+  
+  .search-result-date {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+    margin-bottom: 8px;
+  }
+  
+  .search-result-snippet {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    line-height: 1.5;
+  }
+  
+  .search-result-snippet mark {
+    background-color: rgba(52, 152, 219, 0.2);
+    padding: 0 2px;
+  }
+  
+  .search-no-results {
+    padding: 20px;
+    text-align: center;
+    color: var(--dark-gray);
+  }
+</style>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-heading">关于博客</h3>
+          <p>这是一个分享思考、知识与经验的个人博客。欢迎浏览文章并与我交流。</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3 class="footer-heading">导航</h3>
+          <ul class="footer-links">
+            <li><a href="/">首页</a></li>
+            <li><a href="/about/">关于我</a></li>
+            <li><a href="/archive/">文章归档</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3 class="footer-heading">联系方式</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:your.email@example.com">发送邮件</a></li>
+            <li><a href="#">微博</a></li>
+            <li><a href="#">知乎</a></li>
+            <li><a href="#">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 个人博客. 保留所有权利.</p>
+        <p class="footer-credit">由 <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a> 强力驱动</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/theme-switcher.js"></script>
+</body>
+</html>

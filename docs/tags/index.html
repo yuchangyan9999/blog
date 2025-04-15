@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>所有标签 - 个人博客</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="description" content="我的个人博客网站">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="site-title"><a href="/">个人博客</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">首页</a></li>
+          <li><a href="/archive/">文章归档</a></li>
+          <li><a href="/tags/">标签</a></li>
+          <li><a href="/search/">搜索</a></li>
+          <li><a href="/about/">关于我</a></li>
+        </ul>
+      </nav>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+        <span class="theme-mode-text">夜间模式</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+<div class="tags-page">
+  <header class="tags-header">
+    <h1>所有标签</h1>
+    <p>浏览按主题分类的文章</p>
+  </header>
+
+  <div class="tags-cloud">
+    
+      
+      <a href="/tags/介绍/" class="tag-item">
+        <span class="tag-name">#介绍</span>
+        <span class="tag-count">1</span>
+      </a>
+    
+      
+      <a href="/tags/写作/" class="tag-item">
+        <span class="tag-name">#写作</span>
+        <span class="tag-count">1</span>
+      </a>
+    
+      
+      <a href="/tags/博客/" class="tag-item">
+        <span class="tag-name">#博客</span>
+        <span class="tag-count">2</span>
+      </a>
+    
+      
+      <a href="/tags/技巧/" class="tag-item">
+        <span class="tag-name">#技巧</span>
+        <span class="tag-count">1</span>
+      </a>
+    
+  </div>
+
+  <div class="tags-navigation">
+    <a href="/" class="btn btn-primary">返回首页</a>
+  </div>
+</div>
+
+<style>
+  .tags-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .tags-header h1 {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+  }
+  
+  .tags-header p {
+    color: var(--dark-gray);
+  }
+  
+  .tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .tag-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--light-gray);
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .tag-item:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+    text-decoration: none;
+  }
+  
+  .tag-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    margin-left: 8px;
+  }
+  
+  .tag-item:hover .tag-count {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .tags-navigation {
+    text-align: center;
+    margin-top: 30px;
+  }
+</style>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-heading">关于博客</h3>
+          <p>这是一个分享思考、知识与经验的个人博客。欢迎浏览文章并与我交流。</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3 class="footer-heading">导航</h3>
+          <ul class="footer-links">
+            <li><a href="/">首页</a></li>
+            <li><a href="/about/">关于我</a></li>
+            <li><a href="/archive/">文章归档</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3 class="footer-heading">联系方式</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:your.email@example.com">发送邮件</a></li>
+            <li><a href="#">微博</a></li>
+            <li><a href="#">知乎</a></li>
+            <li><a href="#">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 个人博客. 保留所有权利.</p>
+        <p class="footer-credit">由 <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a> 强力驱动</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/theme-switcher.js"></script>
+</body>
+</html>
